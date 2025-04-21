@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Montserrat', theme('fontFamily.sans'), sans-serif;
-  @apply bg-white text-gray-900 min-h-screen;
+  @apply bg-white text-gray-900 min-h-screen overflow-x-hidden;
   transition: background 0.5s;
 }
 
@@ -56,3 +56,4 @@ body {
   from, to { border-color: transparent }
   50% { border-color: #76d275; }
 }
+

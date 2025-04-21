@@ -32,32 +32,22 @@ export default function Response() {
     <div className="relative min-h-screen bg-white dark:bg-gray-900 transition-colors flex flex-col">
       <FloatingBlobs />
       <Header />
-      <div className="flex-1 flex items-start justify-start relative w-full" style={{ minHeight: "60vh" }}>
+      <div className="flex-1 flex items-start justify-center relative w-full" style={{ minHeight: "60vh" }}>
         {/* Did You Know Box on the left bottom (absolute) */}
         <DidYouKnowBox />
-        {/* Back Button */}
+        
+        {/* Back Button - repositioned with better alignment */}
         <button
-          className="absolute left-1 md:left-8 top-40 z-50 pill bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 px-6 py-2"
-          style={{ marginTop: 0, marginLeft: 0 }}
+          className="absolute left-8 top-4 z-50 pill bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 flex items-center whitespace-nowrap"
           onClick={() => navigate("/")}
         >
           <ArrowLeft size={20} className="mr-1" />
           Back to Home
         </button>
+        
         {/* Response Box (centered, expanded) */}
-        <div className="w-full flex flex-col items-center justify-center fade-in">
-          <div
-            className="w-full max-w-4xl px-3"
-            style={{
-              margin: "0 auto",
-              marginLeft: "26vw",
-              minHeight: "470px",
-              marginRight: "0",
-              display: "flex",
-              alignItems: "flex-start",
-              justifyContent: "center",
-            }}
-          >
+        <div className="w-full flex flex-col items-center justify-center fade-in mt-16">
+          <div className="w-full max-w-4xl px-3">
             <ResponseBox response={error ? ("❌ " + error) : response} image={file} loading={loading} />
           </div>
         </div>

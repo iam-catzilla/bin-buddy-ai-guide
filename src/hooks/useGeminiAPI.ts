@@ -3,7 +3,17 @@ import { useState } from "react";
 
 const GEMINI_KEY = "AIzaSyDektoljoG7mk0yug7fLS0kJ7EfF69bs7g";
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
-const SYSTEM_PROMPT = `You are an expert in recylcing, reusing and managing waste products and household items. Give me summarized bulleted instructions to recycle or reuse this? (Give answer that are applicable on an individual scale. Also Don't give instruction's on living things or potentialy dangeours or illegal objects.) Keep your context limited to the submitted image/ the tags you identify in the image, do not answer out of context. You may analyze the image and answer using pre stored information about the object you have.`;
+const SYSTEM_PROMPT = `You are an expert in recylcing, reusing and managing waste products and household items. For the item in the image:
+
+1. First, identify the item and include its name as a large title heading at the beginning of your response.
+2. Then directly provide bulleted instructions on how to recycle or reuse this item.
+3. Give specific, actionable steps that are applicable on an individual scale.
+4. Don't include any introductory phrases like "I am a language model" or "Here is your information" or "Yes, I can answer that".
+5. Organize your response with clear sections if appropriate.
+6. Don't give instructions on living things or potentially dangerous or illegal objects.
+7. Keep your context limited to the submitted image and the item you identify in it.
+
+Your response should be informative, direct, and well-structured with the item name prominently displayed at the top.`;
 
 function b64(file: File): Promise<{dataUrl: string, mimeType: string}> {
   return new Promise((resolve, reject) => {

@@ -10,8 +10,8 @@ interface Props {
 
 export default function ResponseBox({ response, image, loading }: Props) {
   return (
-    <div className="card-glass max-w-3xl w-full mx-auto min-h-[420px] fade-in relative flex flex-col"
-      style={{ minWidth: "min(95vw, 550px)", marginTop: 0, marginBottom: 0 }}>
+    <div className="card-glass max-w-4xl w-full mx-auto min-h-[500px] fade-in relative flex flex-col"
+      style={{ minWidth: "min(95vw, 900px)" }}>
       <div className="flex items-center px-7 pt-7 pb-1 justify-between">
         <div>
           <h2 className="text-2xl font-bold">Response</h2>
@@ -26,7 +26,7 @@ export default function ResponseBox({ response, image, loading }: Props) {
           />
         )}
       </div>
-      <div className="px-7 pb-7 pt-1 flex-1 min-h-[200px] flex items-start justify-start">
+      <div className="px-7 pb-7 pt-1 flex-1 min-h-[400px] flex items-start justify-start">
         <div className="mt-2 text-left w-full">
           {loading
             ? <span className="italic text-gray-400">Analyzing the image...</span>
